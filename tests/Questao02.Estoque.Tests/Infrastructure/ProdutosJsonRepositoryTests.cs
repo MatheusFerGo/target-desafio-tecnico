@@ -62,4 +62,13 @@ public sealed class ProdutosJsonRepositoryTests : IDisposable
 
         Assert.Throws<InvalidDataException>(() => repository.ObterTodos());
     }
+
+    [Fact]
+    public void Deve_LancarExcecao_QuandoOConteudoDoArquivoForNulo()
+    {
+        File.WriteAllText(_caminhoArquivo, "null");
+        var repository = new ProdutosJsonRepository(_caminhoArquivo);
+
+        Assert.Throws<InvalidDataException>(() => repository.ObterTodos());
+    }
 }

@@ -46,4 +46,15 @@ public sealed class VendasJsonRepositoryTests : IDisposable
 
         Assert.Throws<FileNotFoundException>(() => repository.ObterTodas());
     }
+
+    [Theory]
+    [InlineData("{}")]
+    [InlineData("null")]
+    public void Deve_LancarExcecao_QuandoArquivoNaoTiverAListaDeVendas(string conteudoDoArquivo)
+    {
+        File.WriteAllText(_caminhoArquivo, conteudoDoArquivo);
+        var repository = new VendasJsonRepository(_caminhoArquivo);
+
+        Assert.Throws<InvalidDataException>(() => repository.ObterTodas());
+    }
 }

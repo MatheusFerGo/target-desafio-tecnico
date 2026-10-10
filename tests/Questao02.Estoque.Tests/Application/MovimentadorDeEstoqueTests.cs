@@ -85,4 +85,15 @@ public class MovimentadorDeEstoqueTests
         Assert.Throws<ArgumentException>(
             () => _movimentador.Movimentar(101, TipoMovimentacao.Entrada, 1, descricao));
     }
+
+    [Fact]
+    public void Deve_LancarExcecaoSemAlterarSaldo_QuandoOTipoDaMovimentacaoForInvalido()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(
+            () => _movimentador.Movimentar(101, (TipoMovimentacao)99, 1, "Movimentação inválida"));
+
+        var movimentacao = _movimentador.Movimentar(101, TipoMovimentacao.Entrada, 1, "Ajuste de inventário");
+
+        Assert.Equal(151, movimentacao.SaldoFinal);
+    }
 }

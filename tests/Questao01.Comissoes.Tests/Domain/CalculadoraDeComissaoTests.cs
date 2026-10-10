@@ -32,4 +32,18 @@ public class CalculadoraDeComissaoTests
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => _calculadora.Calcular(-0.01m));
     }
+
+    [Fact]
+    public void Deve_LancarExcecao_QuandoAsFaixasNaoCobremValoresAPartirDeZero()
+    {
+        var faixasSemZero = new[] { new FaixaDeComissao(100m, 0.01m) };
+
+        Assert.Throws<ArgumentException>(() => new CalculadoraDeComissao(faixasSemZero));
+    }
+
+    [Fact]
+    public void Deve_LancarExcecao_QuandoNaoHouverFaixas()
+    {
+        Assert.Throws<ArgumentException>(() => new CalculadoraDeComissao([]));
+    }
 }

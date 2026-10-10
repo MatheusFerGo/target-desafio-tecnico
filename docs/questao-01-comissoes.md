@@ -64,4 +64,4 @@ Ana Lima: R$ 404,99
 
 ## Testes
 
-12 testes automatizados (xUnit) cobrindo as faixas e seus limites, o arredondamento, o valor negativo, a apuração por vendedor e a leitura do JSON.
+16 testes automatizados (xUnit) cobrindo as faixas e seus limites, o arredondamento, o valor negativo, a apuração por vendedor e a leitura do JSON.

@@ -76,4 +76,4 @@ O identificador muda a cada movimentação.
 
 ## Testes
 
-20 testes automatizados (xUnit) para esta questão, cobrindo as regras do `Produto` (entrada, saída, saldo zerado, saída maior que o saldo e quantidades inválidas), o `MovimentadorDeEstoque` (saldo final, dados registrados, acúmulo entre movimentações, identificadores únicos, produto inexistente e descrição inválida) e a leitura do JSON.
+22 testes automatizados (xUnit) para esta questão, cobrindo as regras do `Produto` (entrada, saída, saldo zerado, saída maior que o saldo e quantidades inválidas), o `MovimentadorDeEstoque` (saldo final, dados registrados, acúmulo entre movimentações, identificadores únicos, produto inexistente e descrição inválida) e a leitura do JSON.
